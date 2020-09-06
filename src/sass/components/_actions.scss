@@ -1,0 +1,126 @@
+.c-actions {
+    @extend %wrap;
+    padding-top: 220px;
+    
+    @media ( max-width: $base + 60px ) {
+    	padding-top: base(220);
+    }
+    
+    @media ( max-width: $smartphone + px ) {
+    	padding-top: 50px;
+    }
+
+    h2 {
+        @extend %lead--2;
+        margin-bottom: 40px;
+        text-align: center;
+        
+        @media ( min-width: $mini + 1px ) and ( max-width: $smartphone + px ) {
+        	padding: 0 50px;
+        }
+    }
+    
+    h3 {
+        @extend %lead--3;
+        max-width: 945px;
+        margin: 0 auto;
+        
+        text-align: center;
+        line-height: 1.47;
+        
+        @media ( max-width: $smartphone + px ) {
+        	font-size: rem(20);
+        }
+        
+        @media ( min-width: $smartphone_portrait + 1px ) {
+        	padding: 0 60px;
+        }
+    }
+    
+    h5 {
+        @extend %lead--5;
+        margin:  0 0 15px -30px;
+    }
+    
+    ol {
+        width: calc(100% + 30px);
+        margin: 0 -15px 25px -15px;
+        
+        @media ( min-width: $smartphone + px ) {
+        	display: flex;
+        }
+
+        li {
+            padding: 15px 15px 0 45px;
+            
+            @media ( min-width: $smartphone + px ) {
+                width: calc(100% / 3);
+            }
+            
+            //&:not(:last-child) {
+                @media ( max-width: $smartphone + px ) {
+                	margin-bottom: 50px;
+                }
+            //}
+            
+            &:after {
+                @extend %abs;
+                @extend %abs-pseudo;
+                left: 15px; top: -7px;
+                width: 90px;
+                height: 2px;
+                background-color: $c-brown-01;
+            }
+            
+            &:before {
+                z-index: 10;
+                left: 15px;
+                background-color: white;
+                margin-left: 10px;
+                padding: 0 15px;
+                transform: translateY(-100%);
+            }
+//            padding-left: 30px;
+        }
+        
+        p {
+            line-height: 1.67;
+        }
+    }
+    
+    &__cta {
+        @extend %flex-x;
+        padding: 45px 0 90px 0;
+        
+        @media ( min-width: $smartphone + 1px ) {
+        	display: flex;
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+            padding-bottom: 60px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        span {
+            display: inline-flex;
+            @extend %flex-xy;
+            height: 50px;
+            border-radius: 2px;
+            padding: 0 25px;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+            font: {
+                weight: $bold;
+                size: rem(12);
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+                display: flex;
+                height: 40px;
+            }
+        }
+        
+        
+    }
+}

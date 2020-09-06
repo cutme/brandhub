@@ -1,0 +1,56 @@
+.o-btn {
+    @extend %anim;
+    display: inline-flex;
+    @extend %flex-xy;
+    @extend %rel;
+    height: 60px;
+    white-space: nowrap;
+    border-radius: 2px;
+    padding: 0 50px;
+    letter-spacing: 1.1px;
+    text: {
+        align: center;
+        transform: uppercase;
+    }
+    font: {
+        family: $text;
+        weight: $bold;
+        size: rem(12);
+    }
+    cursor: pointer;
+    
+    &:after {
+	    @extend %abs;
+	    @extend %abs-y;
+	    @extend %abs-after;
+	    @extend %anim;
+	    font: {
+	    	family: $icomoon;
+	    }
+    }
+   
+    &--blue {
+        background-color: $c-primary;
+        color: white;
+    }
+    
+    &--brownoutline {
+        border: 2px solid $c-brown-01;
+    }
+    
+    &--white {
+       background-color: white;
+    }
+    
+    span {
+        width: 100%;
+	}
+}
+
+.o-btn {
+        &:hover {
+        	background-color: $c-brown-01;
+        	color: white;
+        }
+   
+}

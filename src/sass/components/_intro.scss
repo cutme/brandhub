@@ -1,0 +1,197 @@
+.c-intro {    
+    @extend %rel;
+    background-color: $c-ecri-03;
+    
+    &:before {
+        @extend %abs;
+        @extend %abs-pseudo;
+        top: 300px;
+        z-index: -1;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+        transform: rotate(-360deg) translateX(-50%);
+        opacity: 0.31;
+        background-image: conic-gradient(from 0.25turn, #e09b67, #f2ebdc);
+        border-radius: 50%;
+    }
+    
+    &__photo {
+        @extend %rel;
+        z-index: 0;
+        margin-bottom: 10px;
+
+        @media ( min-width: $smartphone + 1px ) {
+            margin-bottom: -115px;
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+        	padding-left: 34px;
+        }
+        
+        &:before {
+            @extend %abs; z-index: -1;
+            @extend %abs-pseudo;
+            left: -24px; top: -24px;
+            width: grid(420, 836);
+            height: 597px;
+            background: {
+                image: url(../img/assets/diagonal-strokes--white.svg);
+                repeat: no-repeat;
+                size: 420px 597px;
+            }
+            
+            @media ( max-width: $base + px ) {
+            	height: base(597);
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+            	display: none;
+            }
+        }
+
+        img {
+            max-width: none;
+            
+            @media ( max-width: $base + 60px ) {
+            	width: base(836);
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+                width: 100%;
+            	margin: 0 -24px 0 auto;
+            }
+        }
+    }
+
+    .o-article {
+        @extend %rel;
+        flex: grid(850) 0 0;
+        margin-right: -200px;
+        padding: 30px 0 0 0;
+        
+        @media ( max-width: $base + 60px ) {
+            margin-right: grid(-200);
+        	padding-top: base(30);
+        }
+        
+        @media ( max-width: $tablet + px ) {
+            flex: 100% 0 0;
+        	margin-right: grid(-648);
+        	padding-right: 40px;
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h2 {
+            @extend %lead--1;
+            line-height: 1.13;
+        }
+
+        h3 {
+            @extend %lead--6;
+            margin-bottom: 1.5em;
+            text-transform: uppercase;
+            color: $c-brown-01;
+        }
+        
+        header {
+            margin-bottom: 35px;
+        }
+        
+        ol {
+            margin-bottom: 60px;
+            padding-right: 50%;
+            
+            @media ( max-width: $smartphone + px ) {
+                margin-bottom: 30px;
+            	padding-right: 10%;
+            }
+            
+            li {
+                padding-left: 55px;
+                margin-bottom: 1.4em;
+                font-size: rem(19);
+                
+                @media ( max-width: $smartphone + px ) {
+                	font-size: rem(16);
+                }
+            }
+        }
+    }
+    
+    .o-btn {
+        &--blue {
+            position: absolute; z-index: 10;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            
+            @media ( max-width: $smartphone + px ) {
+                width: 168px;
+            	padding: 0;
+            }
+
+/*
+            @extend %abs;
+            @extend %abs-y;
+*/
+            width: 260px;
+            //ransform: translateX(-50%);
+        }
+        
+        &--white {
+            margin: 0 0 0 auto;
+            
+            @media ( max-width: $smartphone + px ) {
+            	background-color: transparent;
+            }
+            
+            &:after {
+                right: 0;
+                font-size: rem(21);
+                color: $c-brown-01;
+                content: "\e906";
+            }
+            
+            span {
+                @media ( max-width: $mini + px ) {
+                	display: none;
+                }
+            }
+        }
+    }
+    
+    .o-more {
+        @extend %flex;
+        @extend %flex-y;
+        width: 690px;
+        height: 140px;
+        background-color: white;
+        //margin: 0 -28px 0 auto;
+        margin: 0 -28px 0 184px;
+        padding: 0 40px 0 0;
+        
+        @media ( max-width: $base + 80px ) {
+        	width: base(690);
+        }
+        
+        @media ( max-width: $tablet + px ) {
+        	margin: 0 0 60px 184px;
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+            width: calc(100% - 60px);
+        	height: 106px;
+        	margin: 0 0 60px 84px;
+        }
+    }
+    
+    .o-wrap {
+        @extend %flex;
+    }
+}

@@ -1,0 +1,47 @@
+
+                        <div class="c-contact__form" id="contact">
+
+                            <form action="send.php" method="POST" novalidate autocomplete="off" class="js-fadeInChildren js-contactForm">
+                                <div class="form-row js-formfield">
+                                    <label for="name">Imię i nazwisko</label>
+                                    <input type="text" name="name" id="name" required>
+                                    <div class="js-messages"></div>
+                                </div>
+                                
+                                <div class="form-row js-formfield">
+                                    <label for="email">Adres e-mail</label>
+                                    <input type="email" name="email" id="email" required>
+                                    <div class="js-messages"></div>
+                                </div>
+                                
+                                <div class="form-row js-formfield">
+                                    <label for="tel">Telefon</label>
+                                    <input type="tel" name="tel" id="tel" required>
+                                    <div class="js-messages"></div>
+                                </div>
+                                
+                                <div class="form-row js-formfield">
+                                    <label for="www">Adres strony lub nazwa firmy</label>
+                                    <input type="text" name="www" id="www">
+                                </div>
+                                
+                                <div class="form-row form-row--checkbox">
+                                    <input type="checkbox" name="police" id="police" required>
+                                    <label for="police">
+                                    	<i class="icon-check"></i>
+                                    	<span>Akceptuję <a href="#">Politykę prywatności</a>.</span>
+                                    </label>
+                                    <div class="js-messages"></div>
+                                </div>
+                                
+                                <div class="form-row form-row--submit">
+                                    <div class="lds-ripple"><div></div><div></div></div>
+                                    <div class="form-message"></div>
+                                    <button type="submit" class="o-btn o-btn--blue">
+                                        <span>Wyślij</span>
+                                    </button>
+                                    
+                                </div>
+                            </form>
+                        
+                        </div>

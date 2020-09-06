@@ -1,0 +1,41 @@
+.c-journeymap {
+    @extend %wrap;
+    margin-bottom: 80px;
+    
+    @media ( max-width: $smartphone + px ) {
+    	margin-bottom: 60px;
+    }
+
+    h3 {
+        @extend %lead--2;
+        margin-bottom: .8em;
+    }
+    
+    p {
+        @extend %lead--5;
+        line-height: 1.52;
+        font-weight: $regular;
+        color: $c-black-01;
+    }
+    
+    u {
+        white-space: normal;
+        
+        &:after {
+            @media ( max-width: $mini + px ) {
+	            display: none;
+            }
+        }
+    }
+    
+    .o-article {
+        max-width: 840px;
+    }
+    
+    .o-btn {
+        @media ( max-width: $mini + px ) {
+            width: 100%;
+        	padding: 0;
+        }
+    }
+}

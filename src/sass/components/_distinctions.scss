@@ -1,0 +1,171 @@
+.c-distinctions {
+    margin-bottom: 60px;
+    
+    @media ( max-width: $smartphone_portrait + px ) {
+    	margin-bottom: 30px;
+    }
+
+    figure {
+        @extend %flex;
+
+        figcaption {
+            @extend %rel;
+            margin-left: -30px;
+            margin-right: -30px;
+
+            & > div {
+                @extend %flex;
+                @extend %flex-column;
+                @extend %flex-spacebetween;
+                width: 260px;
+                height: 260px;
+                padding: 40px 32px;
+                color: white; 
+            }
+        }
+        
+        p {
+            line-height: 1.33;
+        }
+        
+        .num {
+            @extend %lead--6;
+        }
+    }
+    
+    &__nav {
+        @extend %flex;
+        @extend %flex-y;
+        padding: 70px 112px 0 112px;
+        
+        @media ( max-width: $tablet + px ) {
+            padding: 50px 27px 0 27px;
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+            padding: 30px 27px 0 27px;
+        }
+        
+        .arrows {
+            @extend %flex;
+            @extend %flex-y;
+            justify-content: flex-end;
+            width: 150px;
+            
+            @media ( max-width: $tablet + px ) {
+                width: 70px;
+            }
+        }
+        
+        .swiper-pagination {
+            @extend %rel;
+            @extend %flex;
+            width: calc(100% - 150px);
+            height: 1px;
+            background-color: $c-ecri-01;
+            
+            @media ( max-width: $tablet + px ) {
+            	width: calc(100% - 70px);
+            }
+        }
+    }
+    
+    .o-lead {
+        &--2 {
+            margin-bottom: 60px;
+            
+            @media ( max-width: $smartphone + px ) {
+            	margin-bottom: 40px;
+            }
+        }
+    }
+
+    .swiper-slide {
+        width: auto;
+        max-height: 474px;
+        
+        @media ( max-width: $tablet + px ) {
+        	max-height: 418px;
+        }
+        
+        &--blue {
+            figcaption {
+                margin-top: 50px;
+
+                & > div {
+                    background-color: $c-black-01;
+                }
+                
+                &:before {
+                    @extend %abs;
+                    @extend %abs-pseudo;
+                    z-index: -1;
+                    left: -80px; top: -40px;
+                    display: block;
+                    width: 305px;
+                    height: 433px;
+                    background: {
+                        image: url(../img/assets/diagonal-strokes--brown.svg);
+                        repeat: no-repeat;
+                        size: contain;
+                    }
+                }
+            }
+        }
+        
+        &--brown {
+            @extend %flex;
+            height: 100vh;
+            flex-direction: column-reverse;
+            
+            figure {
+                margin-bottom: 50px;
+                margin-left: -30px;
+            }
+
+            figcaption {
+                & > div {
+                    background-color: $c-brown-01;
+                }
+            }
+            
+            img {
+                height: 260px;
+            }
+        }
+    }
+    
+    .swiper-button-next, .swiper-button-prev {
+        position: relative;
+        width: auto; height: auto;
+        top: auto; right: auto; left: auto;
+        margin: 0;
+        transform: none;
+        font-size: rem(12);
+        color: $c-brown-01;
+    }
+    
+    .swiper-button-next {
+        margin-left: 10px;
+    }
+    
+    .swiper-button-prev {
+        &:before {
+            transform: scaleX(-1);
+        }
+    }
+    
+    .swiper-pagination-bullet {
+        @extend %anim;
+        border-radius: 0;
+        flex: 1;
+        height: 1px;
+        background-color: transparent;
+        opacity: 0;
+        
+        &.swiper-pagination-bullet-active {
+            background-color: $c-brown-01;
+            opacity: 1;
+        }
+    }
+}

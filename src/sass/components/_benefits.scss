@@ -1,0 +1,114 @@
+.c-benefits {
+    @extend %wrap;
+    max-width: $base + px;
+    margin-bottom: 140px;
+    border-bottom: 1px solid $c-ecri-01;
+    padding-bottom: 100px;
+    
+    @media ( max-width: $base + 60px ) {
+        margin-bottom: base(140);
+    	padding-bottom: base(100);
+    }
+    
+    @media ( max-width: $smartphone_portrait + px ) {
+    	margin-bottom: 50px;
+    	padding-bottom: 50px;
+    }
+    
+    &__cta {
+        //padding: 0 40px;
+        text-align: center;
+    }
+
+    &__list {
+        @extend %flex;
+        margin-bottom: 40px;
+        
+        @media ( max-width: $tablet + px ) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+            margin-bottom: 10px;
+        }
+        
+        li {
+            @extend %flex;
+            @extend %flex-column;
+            align-items: center;
+            width: calc(100% / 7);
+            padding: 0 5px;
+            text-align: center;
+            
+            @media ( max-width: $tablet + px ) {
+            	width: calc(100% / 4);
+            	margin-bottom: 20px;
+            }
+            
+            @media ( max-width: $smartphone_portrait + px ) {
+            	width: 50%;
+            }
+        }
+        
+        p {
+            line-height: 1.5em;
+        }
+    }
+    
+    [class^="icon-"] {
+        @extend %flex;
+        align-items: flex-end;
+        @extend %rel;
+        height: 75px;
+        margin-bottom: 20px;
+        font-size: rem(58);
+        
+        &:after {
+            @extend %abs;
+            @extend %abs-pseudo; z-index: -1;
+            left: 0; top: 0;
+            width: 70px; height: 70px;
+            background-color: $c-ecri-03;
+            border-radius: 50%;
+        }
+        
+        &:before {
+            @extend %rel;
+            left: -10px;
+            bottom: 0;
+        }
+        
+        .icon-changes {
+            font-size: rem(64);
+        }
+    }
+    
+    .o-lead {
+        &--2 {
+            margin-bottom: 1.6em;
+            
+            @media ( min-width: $mini + px ) and ( max-width: $smartphone + px ) {
+            	padding: 0 50px;
+            }
+            
+            @media ( max-width: $tablet_portrait + px ) {
+            	font-size: rem(30);
+            }            
+        }
+        
+        &--3 {
+            margin-bottom: 1em;
+            
+            @media ( max-width: $smartphone + px ) {
+                line-height: 1.5em;
+            	font-size: rem(20);
+            }
+            
+            @media ( min-width: $mini + px ) and ( max-width: $smartphone + px ) {
+                
+//                padding: 0 50px;
+            }
+        }
+    }
+}

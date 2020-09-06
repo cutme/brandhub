@@ -1,0 +1,37 @@
+.c-top {
+	@include z-index(top);
+	background-color: $c-ecri-03;
+	
+	.o-btn {
+    	height: 50px;
+    	margin: 0 0 0 auto;
+    	
+    	@media ( max-width: $smartphone + px ) {
+        	width: 166px;
+        	padding: 0;
+        }
+        
+    	@media ( max-width: $mini + px ) {
+    		width: 136px;
+    	}
+	}
+	
+	.o-logo {
+    	display: block;
+    	width: 148px; height: 25px;
+    	
+    	@media ( max-width: $smartphone + px ) {
+    		width: 124px; height: 21px;
+    	}
+	}
+	
+	.o-wrap {
+	    @extend %flex;
+        @extend %flex-y;
+    	height: 150px;
+    	
+    	@media ( max-width: $smartphone + px ) {
+    		height: 130px;
+    	}    	
+	}
+}
