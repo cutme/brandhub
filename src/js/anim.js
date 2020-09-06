@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded',function() {
         gsap.from('.c-intro li:nth-of-type(3)', { opacity: 0, duration: 1, y: 50, delay: .3 })
         gsap.from('.c-intro .c-intro__photo', { opacity: 0, duration: 1, x: 50, delay: .4 })
         gsap.from('.c-intro .o-more', { opacity: 0, duration: 1, x: -50, delay: .5 })
-        gsap.to('.c-intro .o-more .js-btn', { opacity: 1, duration: 1, xPercent: -50, delay: .4 })
+        
+        //document.documentElement.classList.contains('desktop') ? 
+            //gsap.to('.c-intro .o-more .js-btn', { opacity: 1, duration: 1, xPercent: -50, delay: 11.4 })
     };
     
     const sections = function() {

@@ -344,6 +344,8 @@
     }
     
     .is-mobile {
+        display: block;
+
         @media ( min-width: $tablet_portrait + 1px ) {
         	display: none;
         }
