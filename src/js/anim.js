@@ -63,6 +63,41 @@ document.addEventListener('DOMContentLoaded',function() {
             });
         }); 
         
+        
+        
+        const config = { threshold: 0 };
+
+        let observer = new IntersectionObserver(function(entries, self) { 
+          let targets = entries.map(entry => {
+            if(entry.isIntersecting) {
+              self.unobserve(entry.target);
+              return entry.target;
+            }
+          });
+          
+          // Call our animation function
+          fadeIn(targets);
+        }, config);
+        
+        document.querySelectorAll('.c-benefits ul li').forEach(box => {
+          observer.observe(box);
+        });
+        
+        
+        // Fades in the targets given 
+        function fadeIn(targets) {
+          
+            // Using GSAP's staggers!
+            gsap.from(targets, { 
+                opacity: 0,
+                y: 50, 
+                stagger: 0.2 
+              });
+        }
+        
+        
+        
+        
         // Intro
         
         gsap.to('.c-intro__photo', {
