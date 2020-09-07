@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { TweenLite, ScrollToPlugin, Power1 } from "gsap/all";
+import { TweenLite, ScrollToPlugin, Power4 } from "gsap/all";
 const scrollPlugin = ScrollToPlugin;
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -15,56 +15,19 @@ document.addEventListener('DOMContentLoaded',function() {
 
     	return speed;
 	};
-	
-	const scrollTo = function (target, speed, offset) {    
-    	
-    	//console.log(target + ' ' + speed + ' ' + offset)
-    	//console.log(TweenLite);
-    	
-		TweenLite.to(window, speed, {
-			scrollTo: {
-				y: target - offset,
-				autoKill: false
-			},
-			ease: Power1.easeOut
-		});
-	};
-	
+
 	const clickAction = function(e) {
 	
 	    const that = e.currentTarget;
 
-	    let src = that.getAttribute('href');
+	    const src = that.getAttribute('href');
 	    
 	    if (!src) {
-	    
 	        src = that.getElementsByTagName('a')[0].getAttribute('href');
         } 
 
-	    const window_pos = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+        gsap.to(window, { duration: 1.5, scrollTo: src, ease: Power4.easeOut });
 
-	    const obj = document.getElementById( src.slice(1, src.length) );
-
-	    if (obj) {
-	        let offset = that.getAttribute('data-offset');
-
-            if (!offset) {
-                offset = 0;
-            }
-            
-            document.body.removeAttribute('style');
-	    
-	        let target = window_pos + obj.getBoundingClientRect().top - offset;
-	        scrollTo(target, speed_calculate(target), offset);
-
-	    } else {
-    	    window.open(src, '_self');
-	    }
-        
-        if (window.e) {
-            window.e.returnValue = false;
-        }
-        
 	    e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
 	};
 	
