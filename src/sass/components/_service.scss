@@ -1,12 +1,10 @@
 .c-service {
     @extend %wrap;
     width: $base + px;
-    margin-bottom: 140px;
     padding: 310px 0 100px 74px;
     border-bottom: 1px solid $c-ecri-01;
     
     @media ( max-width: $base + 60px ) {
-        margin-bottom: base(140);
     	padding: base(310) 0 base(100) 74px;
     }    
 
@@ -26,7 +24,6 @@
     }
 
     @media ( max-width: $smartphone + px ) {
-    	margin-bottom: 50px;
     	padding-bottom: 50px;
     	padding-top: 60px;
     }

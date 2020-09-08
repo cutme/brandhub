@@ -3,20 +3,28 @@
     max-width: $base + px;
     margin-bottom: 140px;
     border-bottom: 1px solid $c-ecri-01;
-    padding-bottom: 100px;
+    padding: {
+        bottom: 100px;
+        top: 140px;
+    }
     
     @media ( max-width: $base + 60px ) {
         margin-bottom: base(140);
-    	padding-bottom: base(100);
+    	padding: {
+        	bottom: base(100);
+        	top: base(140);
+        }
     }
     
     @media ( max-width: $smartphone_portrait + px ) {
     	margin-bottom: 50px;
-    	padding-bottom: 50px;
+    	padding: {
+        	bottom: 50px;
+        	top: 50px;
+        }
     }
     
     &__cta {
-        //padding: 0 40px;
         text-align: center;
     }
 
