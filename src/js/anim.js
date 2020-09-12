@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded',function() {
         gsap.from('.c-intro li:nth-of-type(3)', { opacity: 0, duration: 1, y: 50, delay: .3 })
         gsap.from('.c-intro .c-intro__photo', { opacity: 0, duration: 1, x: 50, delay: .4 })
         gsap.from('.c-intro .o-more', { opacity: 0, duration: 1, x: -50, delay: .5 })
-        
-        //document.documentElement.classList.contains('desktop') ? 
-            //gsap.to('.c-intro .o-more .js-btn', { opacity: 1, duration: 1, xPercent: -50, delay: 11.4 })
     };
     
     const sections = function() {
@@ -63,40 +60,23 @@ document.addEventListener('DOMContentLoaded',function() {
             });
         }); 
         
-        
-        
-        const config = { threshold: 0 };
 
-        let observer = new IntersectionObserver(function(entries, self) { 
-          let targets = entries.map(entry => {
-            if(entry.isIntersecting) {
-              self.unobserve(entry.target);
-              return entry.target;
-            }
-          });
-          
-          // Call our animation function
-          fadeIn(targets);
-        }, config);
-        
-        document.querySelectorAll('.c-benefits ul li').forEach(box => {
-          observer.observe(box);
-        });
-        
         
         // Fades in the targets given 
-        function fadeIn(targets) {
-          
-            // Using GSAP's staggers!
-            gsap.from(targets, { 
-                opacity: 0,
-                y: 50, 
-                stagger: 0.2 
-              });
-        }
         
+        gsap.from('.c-benefits__list li', {
+            scrollTrigger: {
+                trigger: '.c-benefits__list li',
+            },
+            stagger: {
+                each: 0.1,
+                from: 'left'
+            },
+            opacity: 0,
+            y: -60,
+        });
         
-        
+  
         
         // Intro
         
@@ -161,9 +141,9 @@ document.addEventListener('DOMContentLoaded',function() {
                 trigger: '.js-distinctionsSlider',
                 scrub: 2.2,
                 start: 'top bottom',
-                end: 'center center'
+                end: 'top center'
             },      
-            xPercent: 10
+            xPercent: 15
         });
 
 

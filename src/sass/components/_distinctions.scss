@@ -7,11 +7,11 @@
 
     figure {
         @extend %flex;
+        @extend %rel;
 
         figcaption {
             @extend %rel;
-            margin-left: -30px;
-            margin-right: -30px;
+            width: 260px; height: 260px;
 
             & > div {
                 @extend %flex;
@@ -22,6 +22,40 @@
                 padding: 40px 32px;
                 color: white; 
             }
+            
+            &.blue {
+                & > div {
+                    background-color: $c-black-01;
+                }
+            }
+            
+            &.blue-light {
+                & > div {
+                    background-color: $c-blue-01;
+                }
+            }
+            
+            &.brown {
+                & > div {
+                    background-color: $c-brown-01;
+                }
+            }
+            
+            &.strokes {
+                &:before {
+                    @extend %abs;
+                    @extend %abs-pseudo;
+                    z-index: -1;
+                    width: 305px;
+                    height: 433px;
+                    background: {
+                        image: url(../img/assets/diagonal-strokes--brown.svg);
+                        repeat: no-repeat;
+                        size: contain;
+                    }
+                    display: none;
+                }
+            }            
         }
         
         p {
@@ -30,6 +64,19 @@
         
         .num {
             @extend %lead--6;
+        }
+    }
+    
+    .circle {
+        &:after {
+            @extend %abs;
+            @extend %abs-pseudo;
+            z-index: -1;
+            object-fit: contain;
+            transform: rotate(-360deg) translateX(-50%);
+            opacity: 0.31;
+            background-image: conic-gradient(from 0.25turn, #e09b67, #f2ebdc);
+            border-radius: 50%;
         }
     }
     
@@ -81,6 +128,7 @@
     }
 
     .swiper-slide {
+        @extend %flex;
         width: auto;
         max-height: 474px;
         
@@ -88,49 +136,102 @@
         	max-height: 418px;
         }
         
-        &--blue {
-            figcaption {
-                margin-top: 50px;
-
-                & > div {
-                    background-color: $c-black-01;
+        &--01 {
+            figure {
+                &:after {
+                    right: 175px;
+                    top: 100%;
+                    width: 104px;
+                    height: 104px;
+                    transform: translateY(-100%) translateY(-20px);
                 }
+            }
+
+            figcaption {
+                margin-left: -65px;
+                margin-right: 55px;
+            }
+        }
+        
+        &--02 {
+            figure {
+                @extend %flex-end;
+                flex-direction: row-reverse;
+                margin-right: 55px;
                 
-                &:before {
-                    @extend %abs;
-                    @extend %abs-pseudo;
-                    z-index: -1;
-                    left: -80px; top: -40px;
-                    display: block;
-                    width: 305px;
-                    height: 433px;
-                    background: {
-                        image: url(../img/assets/diagonal-strokes--brown.svg);
-                        repeat: no-repeat;
-                        size: contain;
+                figcaption {
+                    margin-right: -50px;
+                    margin-bottom: 50px;
+                    
+                    &:before {
+                        display: block;
+                        left: 55px; top: -140px;
                     }
                 }
             }
         }
         
-        &--brown {
-            @extend %flex;
+        &--03 {
             height: 100vh;
-            flex-direction: column-reverse;
-            
-            figure {
-                margin-bottom: 50px;
-                margin-left: -30px;
-            }
 
-            figcaption {
-                & > div {
-                    background-color: $c-brown-01;
+            figure {
+                align-self: center;
+                
+                &:after {
+                    right: -110px;
+                    top: -20px;
+                    width: 174px;
+                    height: 174px;
+                }
+                
+                figcaption {
+                    align-self: center;
+                    margin-left: -45px;
+                    margin-right: 55px;
                 }
             }
-            
-            img {
-                height: 260px;
+        }
+        
+        &--04 {
+            figure {
+                @extend %flex-end;
+                flex-direction: row-reverse;
+
+                figcaption {
+                    margin-right: -55px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        
+        &--05 {
+            height: 100vh;
+
+            figure {
+                @extend %flex-end;
+                margin-bottom: 55px;
+                margin-left: -35px;
+                margin-right: -35px;
+                
+                figcaption {
+
+                }
+            }
+        }
+        
+        &--06 {
+            figure {                
+                margin-right: 140px;
+
+                figcaption {
+                    margin-left: -35px;
+                    margin-top: 60px;
+                    
+                    &:before {
+                        display: block;
+                        right: 30px; top: -40px;
+                    }
+                }
             }
         }
     }
