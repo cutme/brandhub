@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { TweenLite, ScrollToPlugin, Power4 } from "gsap/all";
+import { ScrollToPlugin, Power4 } from "gsap/all";
 const scrollPlugin = ScrollToPlugin;
 gsap.registerPlugin(ScrollToPlugin);
 
