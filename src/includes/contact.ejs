@@ -1,30 +1,53 @@
-    
-        <div class="c-contact">
-            <div class="o-cols">
-                
-                <div class="o-cols__item">
-                    <div class="o-cols__content">
-                        <div class="c-contact__lead js-fadeInChildren">
+
+    <div class="c-contact">
+        <div class="o-cols">
+            
+            <div class="o-cols__item">
+                <div class="o-cols__content">
+                    <div class="c-contact__lead js-fadeInChildren">
+                        
+                        <h3>Wypełnij formularz, skontaktujemy się z&nbsp;Tobą</h3>
+                        
+                        <figure class="c-contact__details">
+                            <img src=<%= require("./img/assets/contact.svg") %> width="189" height="189" alt="">
                             
-                            <h3>Wypełnij formularz, skontaktujemy się z&nbsp;Tobą</h3>
-                            
-                            <figure class="c-contact__details">
-                                <img src=<%= require("./img/assets/contact.svg") %> width="189" height="189" alt="">
+                            <figcaption>
+                                <p>Możesz też napisać do nas na<br>
+                                   <a href="mailto:hello@brandhub.pl">hello@brandhub.pl</a></p>
                                 
-                                <figcaption>
-                                    <p>Możesz też napisać do nas na<br>
-                                       <a href="mailto:hello@brandhub.pl">hello@brandhub.pl</a></p>
-                                    
-                                    <p>Wolisz rozmawiać? Dzwoń śmiało<br> 
+                                <p>Wolisz rozmawiać? Dzwoń śmiało<br> 
 i&nbsp;umów się na spotkanie<br>
 <a href="tel:0048699713742">+ 48 699 713 742</a></p>
-                                </figcaption>
-                            </figure>
-                            
-                        </div>
+                            </figcaption>
+                        </figure>
+                        
                     </div>
-                    
-                    <div class="c-contact__bottom is-desktop">
+                </div>
+                
+                <div class="c-contact__bottom is-desktop">
+                    <div class="c-contact__social">
+                        <p>Znajdź nas na:</p>
+                        <ul>
+                            <li>
+                                <a href="https://www.linkedin.com/company/brandhubpl/" target="_blank">LinkedIn</a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.instagram.com/brandhub_agency/" target="_blank">Intagram</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="o-cols__item">
+                <div class="o-cols__content">
+                    <% include contact-form %>
+                    <div class="strokes"></div>
+                </div>
+                
+                <div class="c-contact__bottom">
+                    <div class="is-mobile">
                         <div class="c-contact__social">
                             <p>Znajdź nas na:</p>
                             <ul>
@@ -33,37 +56,12 @@ i&nbsp;umów się na spotkanie<br>
                                 </li>
                                 
                                 <li>
-                                    <a href="https://www.instagram.com/brandhub_agency/" target="_blank">Intagram</a>
+                                    <a href="https://www.instagram.com/brandhub_agency/" target="_blank">Instagram</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                
-                <div class="o-cols__item">
-                    <div class="o-cols__content">
-                        <% include contact-form %>
-                        <div class="strokes"></div>
-                    </div>
-                    
-                    <div class="c-contact__bottom">
-                        <div class="is-mobile">
-                            <div class="c-contact__social">
-                                <p>Znajdź nas na:</p>
-                                <ul>
-                                    <li>
-                                        <a href="https://www.linkedin.com/company/brandhubpl/" target="_blank">LinkedIn</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="https://www.instagram.com/brandhub_agency/" target="_blank">Intagram</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-            </div>
+            </div>            
         </div>
+    </div>
